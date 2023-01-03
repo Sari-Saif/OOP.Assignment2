@@ -72,7 +72,7 @@ public class Ex2_1
 
        for(int i = 0; i < fileNames.length; i++)
        {
-           arrGetNumOfLinesThread[i] = new GetNumOfLinesThread();
+           arrGetNumOfLinesThread[i] = new GetNumOfLinesThread(fileNames[i]);
            arrGetNumOfLinesThread[i].start();
        }
 
