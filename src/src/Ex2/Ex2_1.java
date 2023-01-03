@@ -4,6 +4,10 @@ import java.io.FileWriter;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Random;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class Ex2_1
 {
@@ -90,12 +94,32 @@ public class Ex2_1
 
     public int getNumOfLinesThreadPool(String[] fileNames)
     {
-        // TODO: create ThreadPool with length of filenames.length
+        int numOfLines = 0;
 
-        // TODO: create array of Future<int> with length of filename.length
+        // create ThreadPool with length of filenames.length
+        ExecutorService pool = Executors.newFixedThreadPool(fileNames.length);
 
-        // TODO: create array that submit all our-callable with the filename
+        // create array of Future<int> with length of filename.length
+        Future<Integer>[] numOfLinesPerThread = new Future[fileNames.length];
 
-        // TODO: for each Future<int> in the arr, get and sum the value.
+        // create array that submit all our-callable with the filename
+        for(int i = 0; i < fileNames.length; i++)
+        {
+            numOfLinesPerThread[i] = pool.submit(new GetNumOfLinesThreadPool(fileNames[i]));
+        }
+
+        // for each Future<int> in the arr, get and sum the value.
+        for(Future<Integer> numOfLinesCurrThread: numOfLinesPerThread)
+        {
+            try {
+                numOfLines += numOfLinesCurrThread.get();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            } catch (ExecutionException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        return numOfLines;
     }
 }
