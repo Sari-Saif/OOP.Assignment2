@@ -60,13 +60,13 @@ public class Ex2_1
         return NumOfLines;
     }
 
-    public int getNumOfLinesThreads(String[] fileNames)
-    {
-        //TODO
-    }
-
-    public int getNumOfLinesThreadPool(String[] fileNames)
-    {
-        //TODO
-    }
+//    public int getNumOfLinesThreads(String[] fileNames)
+//    {
+//        //TODO
+//    }
+//
+//    public int getNumOfLinesThreadPool(String[] fileNames)
+//    {
+//        //TODO
+//    }
 }
