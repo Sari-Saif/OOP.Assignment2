@@ -1,9 +1,23 @@
 package Ex2;
 
-public class GetNumOfLinesThread
+public class GetNumOfLinesThread extends Thread
 {
-    public GetNumOfLinesThread()
+    int numberOflines;
+    String filename;
+    public GetNumOfLinesThread(String fileName)
     {
+        this.filename = fileName;
+    }
+    public int get_numOfLines()
+    {
+        return this.numberOflines;
+    }
 
+    @Override
+    public void run()
+    {
+        String[] arrWithOneFilename = new String[1];
+        arrWithOneFilename[0] = this.filename;
+        numberOflines = Ex2_1.getNumOfLines(arrWithOneFilename);
     }
 }
