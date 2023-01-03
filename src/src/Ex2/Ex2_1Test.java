@@ -1,8 +1,10 @@
 package Ex2;
 
+import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.testng.AssertJUnit.*;
 
 class Ex2_1Test
 {
@@ -15,7 +17,7 @@ class Ex2_1Test
     @Test
     void getNumOfLines()
     {
-        String[] filenames = {"test_me1.txt", "test_me2.txt", "test_me3.txt"};
-        System.out.println("number of lines of all files: " + Ex2_1.getNumOfLines(filenames));
+        String[] filenames = {"wishes_text\\test_me1.txt", "wishes_text\\test_me2.txt", "wishes_text\\test_me3.txt","wishes_text\\test_me4.txt"};
+        assertEquals(70 , Ex2_1.getNumOfLines(filenames) );
     }
 }
