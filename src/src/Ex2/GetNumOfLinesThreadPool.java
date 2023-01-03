@@ -11,11 +11,12 @@ public class GetNumOfLinesThreadPool implements Callable<Integer>
         this.filename = filename;
 
     }
-    
+
     @Override
     public Integer call() throws Exception
     {
-
-        return null;
+        String[] arrWithOneFilename = new String[1];
+        arrWithOneFilename[0] = this.filename;
+        return Ex2_1.getNumOfLines(arrWithOneFilename);
     }
 }
