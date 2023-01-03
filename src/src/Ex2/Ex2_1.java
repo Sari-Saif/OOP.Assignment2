@@ -27,7 +27,7 @@ public class Ex2_1
     public static int getNumOfLines(String[] fileNames)
     {
         //TODO
-        int NumOfLines = 0;
+        int NumOfLines = 0 ;
 
 
     }
