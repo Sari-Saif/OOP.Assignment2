@@ -41,23 +41,22 @@ public class Ex2_1
 
     public static int getNumOfLines(String[] fileNames)
     {
-        //TODO
-        // initial number for lines
-        int NumOfLines = 0 ;
-        for( int i =0 ; i < fileNames.length ; i++)
+        int numOfLines = 0 ;
+        for ( String name : fileNames)
         {
-           try {
-               // we get the name of file 'i'
-               String name_Of_file = fileNames[i];
+           try
+           {
                // read the specific file
-               BufferedReader fileReader = new BufferedReader(new FileReader(name_Of_file));
+               BufferedReader fileReader = new BufferedReader(new FileReader(name));
                // get number of files by streaming .
-               NumOfLines += fileReader.lines().count();
+               numOfLines += fileReader.lines().count();
            }
-           catch (Exception e){}
-
+           catch (Exception e)
+           {
+               System.out.println(e.getMessage());
+           }
         }
-        return NumOfLines;
+        return numOfLines;
     }
 
 //    public int getNumOfLinesThreads(String[] fileNames)
