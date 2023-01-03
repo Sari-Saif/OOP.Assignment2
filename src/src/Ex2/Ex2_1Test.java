@@ -42,4 +42,17 @@ class Ex2_1Test
 
         System.out.println(Ex2_1.getNumOfLinesThreads(filenames));
     }
+
+    @Test
+    void getNumOfLinesThreadPool()
+    {
+        String[] filenames = new String[NUM_OF_FILES];
+
+        for(int i = 0; i < NUM_OF_FILES; i++)
+        {
+            filenames[i] = "text_files\\file_" + (i+1) + ".txt";
+        }
+
+        System.out.println(Ex2_1.getNumOfLinesThreadPool(filenames));
+    }
 }
