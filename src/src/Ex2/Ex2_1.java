@@ -88,8 +88,14 @@ public class Ex2_1
         return counterNumOfLines;
     }
 
-//    public int getNumOfLinesThreadPool(String[] fileNames)
-//    {
-//        //TODO
-//    }
+    public int getNumOfLinesThreadPool(String[] fileNames)
+    {
+        // TODO: create ThreadPool with length of filenames.length
+
+        // TODO: create array of Future<int> with length of filename.length
+
+        // TODO: create array that submit all our-callable with the filename
+
+        // TODO: for each Future<int> in the arr, get and sum the value.
+    }
 }
