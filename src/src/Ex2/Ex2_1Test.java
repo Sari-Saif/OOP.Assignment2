@@ -7,10 +7,14 @@ import static org.junit.jupiter.api.Assertions.*;
 class Ex2_1Test {
 
     @Test
-    void createTextFiles() {
+    void createTextFiles()
+    {
+
     }
 
     @Test
-    void getNumOfLines() {
+    void getNumOfLines()
+    {
+
     }
 }
