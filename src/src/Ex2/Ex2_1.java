@@ -66,7 +66,26 @@ public class Ex2_1
 
     public int getNumOfLinesThreads(String[] fileNames)
     {
-        //TODO
+        int counterNumOfLines = 0;
+
+        GetNumOfLinesThread[]  arrGetNumOfLinesThread = new GetNumOfLinesThread[fileNames.length];
+
+       for(int i = 0; i < fileNames.length; i++)
+       {
+           arrGetNumOfLinesThread[i] = new GetNumOfLinesThread(fileNames[i]);
+           arrGetNumOfLinesThread[i].start();
+       }
+
+        for(int i = 0; i < fileNames.length; i++)
+        {
+            try
+            {
+                arrGetNumOfLinesThread[i].join();
+                counterNumOfLines += arrGetNumOfLinesThread[i].get_numOfLines();
+            }catch(Exception e){}
+        }
+
+        return counterNumOfLines;
     }
 
 //    public int getNumOfLinesThreadPool(String[] fileNames)
