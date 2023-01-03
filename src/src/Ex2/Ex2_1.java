@@ -50,13 +50,16 @@ public class Ex2_1
            {
                // read the specific file
                BufferedReader fileReader = new BufferedReader(new FileReader(name));
-               // get number of files by streaming .
+               // get number of files by streaming
                numOfLines += fileReader.lines().count();
+               fileReader.close();
            }
+
            catch (Exception e)
            {
                System.out.println(e.getMessage());
            }
+
         }
         return numOfLines;
     }
