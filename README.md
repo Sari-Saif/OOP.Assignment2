@@ -1,7 +1,7 @@
 # OOP.Assignment2
 
 # Scenario 1 : Up to 10 lines in a single file
-`Ex2_1.createTextFiles(NUM_OF_FILES_4, 1, 10);`
+`Ex2_1.createTextFiles(10000, 1, 10);`
 
 | 10000 Files | 1000 Files | 100 Files |      10 Files |                                |
 |------------:|-----------:|----------:|--------------:|-------------------------------:|
@@ -12,7 +12,7 @@
 
 
 # Scenario 2 : Up to 100 lines in a single file
-`Ex2_1.createTextFiles(NUM_OF_FILES_4, 1, 100);`
+`Ex2_1.createTextFiles(10000, 1, 100);`
 
 |   10000 Files |   1000 Files | 100 Files | 10 Files |                                |
 |--------------:|-------------:|----------:|---------:|-------------------------------:|
@@ -23,7 +23,7 @@
 
 
 # Scenario 3 : Up to 1000 lines in a single file
-`Ex2_1.createTextFiles(NUM_OF_FILES_4, 1, 1000);`
+`Ex2_1.createTextFiles(10000, 1, 1000);`
 
 |   10000 Files |   1000 Files | 100 Files | 10 Files |                                |
 |--------------:|-------------:|----------:|---------:|-------------------------------:|
