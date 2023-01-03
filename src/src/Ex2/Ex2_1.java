@@ -1,13 +1,8 @@
 package Ex2;
 
-import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
-
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
-
 import java.util.Random;
 
 public class Ex2_1
