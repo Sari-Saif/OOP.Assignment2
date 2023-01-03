@@ -22,16 +22,18 @@ public class Ex2_1
             try
             {
                 // create new file
-                FileWriter fileWriter_i = new FileWriter("file_" + i + ".txt");
+                FileWriter fileWriter_i = new FileWriter("file_" + (i+1) + ".txt");
 
                 // append random nunber of lines to the file.
                 for(int j = 0; j < numOfLines; j++)
                 {
-                    fileWriter_i.write("Line number " + j+1 + "\n");
+                    fileWriter_i.write("Line number " + (j+1) + "\n");
                 }
 
+                fileWriter_i.close();
+
                 // save the file name.
-                textFileNames[i] = "file_" + i + ".txt";
+                textFileNames[i] = "file_" + (i+1) + ".txt";
 
             }catch (Exception e){}
         }
