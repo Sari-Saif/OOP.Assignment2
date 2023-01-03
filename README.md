@@ -11,7 +11,7 @@
 |  45309      |       4738 |       476 |      57 |                    total lines |
 
 
-# Scenario 1 : Up to 100 lines in a single file
+# Scenario 2 : Up to 100 lines in a single file
 `Ex2_1.createTextFiles(NUM_OF_FILES_4, 1, 100);`
 
 |   10000 Files |   1000 Files | 100 Files | 10 Files |                                |
