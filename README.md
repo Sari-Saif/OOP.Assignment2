@@ -20,3 +20,14 @@
 |  1 sec 632 ms |       255 ms |     78 ms |    48 ms |         getNumOfLinesThreads() |
 |    2 sec 8 ms |       210 ms |     65 ms |    48 ms |      getNumOfLinesThreadPool() |
 |        499039 |        50698 |      4956 |      457 |                    total lines |
+
+
+# Scenario 2 : Up to 100 lines in a single file
+`Ex2_1.createTextFiles(NUM_OF_FILES_4, 1, 1000);`
+
+|   10000 Files |   1000 Files | 100 Files | 10 Files |                                |
+|--------------:|-------------:|----------:|---------:|-------------------------------:|
+| 55 sec 304 ms | 6 sec 800 ms |    649 ms |   110 ms |                getNumOfLines() |
+|  1 sec 835 ms |       289 ms |    100 ms |    42 ms |         getNumOfLinesThreads() |
+|  2 sec 251 ms |       286 ms |    103 ms |    54 ms |      getNumOfLinesThreadPool() |
+|       5005739 |       508498 |     51056 |     6657 |                    total lines |
