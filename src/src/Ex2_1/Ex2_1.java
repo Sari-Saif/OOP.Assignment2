@@ -1,4 +1,4 @@
-package Ex2;
+package Ex2_1;
 
 import java.io.FileWriter;
 import java.io.BufferedReader;

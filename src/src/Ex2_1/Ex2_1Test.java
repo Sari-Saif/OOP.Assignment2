@@ -1,10 +1,6 @@
-package Ex2;
+package Ex2_1;
 
-import org.junit.Assert;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.testng.AssertJUnit.*;
 
 class Ex2_1Test
 {

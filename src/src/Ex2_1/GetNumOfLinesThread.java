@@ -1,4 +1,4 @@
-package Ex2;
+package Ex2_1;
 
 public class GetNumOfLinesThread extends Thread
 {
