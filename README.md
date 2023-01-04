@@ -1,5 +1,31 @@
 # OOP.Assignment2
 
+### THREADS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Scenario 1 : Up to 10 lines in a single file
 `Ex2_1.createTextFiles(10000, 1, 10);`
 
