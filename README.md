@@ -1,6 +1,10 @@
 # OOP.Assignment2
 
 ## PART A
+<p>
+<img src="presentation.png" width="40%"/>
+</p>
+
 ## Brief  
 we created numbers of files and compute number lines for each file ,
 by using 3 methods:
@@ -11,29 +15,6 @@ by using 3 methods:
 
 The following tables show 3 scenarios in each scenario are measured
 3 methods on fixed amounts of files In ascending order of lines per file
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ### Scenario 1: Up to 10 lines in a single file
 `Ex2_1.createTextFiles(10000, 1, 10);`
@@ -80,3 +61,16 @@ uses threadpool, takes a little more time than the second function.
 We assume that this is the case because both use more or less the same number of threads,
 
 but we pay the overhead of creating the threadpool and operating it.
+
+## UML
+<p>
+<img src="" width="40%"/>
+</p>
+
+## Languages and Tools
+
+ <div align="center">
+  <code><img height="40" width="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png"></code>
+ <code><img height="40" width="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IntelliJ_IDEA_Icon.svg/1024px-IntelliJ_IDEA_Icon.svg.png"></code>
+ <code><img height="40" width="40" src="https://drawio-app.com/wp-content/uploads/2021/05/drawio_logo_RGB_symbol_large.png"></code>
+  </div>
