@@ -1,8 +1,8 @@
 # OOP.Assignment2
 
 ## PART A
-<p>
-<img src="presentation.png" width="40%"/>
+<p align="center">
+<img src="presentation.png" width="45%"/>
 </p>
 
 ## Brief  
@@ -30,7 +30,8 @@ The following tables show 3 scenarios in each scenario are measured
 ### Scenario 2: Up to 100 lines in a single file
 `Ex2_1.createTextFiles(10000, 1, 100);`
 
-|   10000 Files |   1000 Files | 100 Files | 10 Files |                                |
+
+ |   10000 Files |   1000 Files | 100 Files | 10 Files |                                |
 |--------------:|-------------:|----------:|---------:|-------------------------------:|
 | 13 sec 709 ms | 1 sec 601 ms |    448 ms |    95 ms |                `getNumOfLines()` |
 |  1 sec 632 ms |       255 ms |     78 ms |    48 ms |         `getNumOfLinesThreads()` |
