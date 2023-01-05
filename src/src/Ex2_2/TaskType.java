@@ -37,6 +37,7 @@ public enum TaskType
         }
     }
 
+
     public int getPriorityValue()
     {
         return typePriority;
