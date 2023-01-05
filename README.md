@@ -64,8 +64,8 @@ We assume that this is the case because both use more or less the same number of
 but we pay the overhead of creating the threadpool and operating it.
 
 ## UML
-<p>
-<img src="![Screenshot 2023-01-05 131225](https://user-images.githubusercontent.com/98646866/210767114-04960191-994d-4264-b7b3-2f484a462e93.png)" width="40%"/>
+<p align="center">
+<img src="uml.png" width="45%"/>
 </p>
 
 ## Languages and Tools
