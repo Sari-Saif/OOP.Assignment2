@@ -17,15 +17,15 @@ public class Task<T> implements Callable<T>, Comparable<Task<T>>
     }
 
 
-    public static Task createTask(Callable task)
+    public static <T> Task<T> createTask(Callable<T> task)
     {
         return createTask(task, defaultPriority) ;
     }
 
 
-    public static Task createTask(Callable task, TaskType priority)
+    public static <T> Task<T> createTask(Callable<T> task, TaskType priority)
     {
-        return new Task(task, priority);
+        return new Task<T>(task, priority);
     }
 
 

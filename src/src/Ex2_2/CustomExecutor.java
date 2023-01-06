@@ -17,19 +17,19 @@ public class CustomExecutor
     }
 
 
-    public Future<?> submit(Task<?> task)
+    public <T> Future<T> submit(Task<T> task)
     {
         return this.threadPool.submit(task);
     }
 
 
-    public Future<?> submit(Callable<?> c, TaskType tt)
+    public <T> Future<T> submit(Callable<T> c, TaskType tt)
     {
         return submit(Task.createTask(c, tt));
     }
 
 
-    public Future<?> submit(Callable<?> c)
+    public <T> Future<T> submit(Callable<T> c)
     {
         return submit(Task.createTask(c));
     }
