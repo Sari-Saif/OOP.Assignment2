@@ -1,9 +1,6 @@
 package Ex2_2;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.PriorityBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 public class CustomExecutor
 {
@@ -20,19 +17,19 @@ public class CustomExecutor
     }
 
 
-    public Object submit(Task task)
+    public Future<?> submit(Task<?> task)
     {
         return this.threadPool.submit(task);
     }
 
 
-    public Object submit(Callable c, TaskType tt)
+    public Future<?> submit(Callable<?> c, TaskType tt)
     {
         return submit(Task.createTask(c, tt));
     }
 
 
-    public Object submit(Callable c)
+    public Future<?> submit(Callable<?> c)
     {
         return submit(Task.createTask(c));
     }
