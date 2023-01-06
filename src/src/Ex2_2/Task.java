@@ -5,7 +5,7 @@ import java.util.concurrent.Callable;
 
 public class Task implements Callable,Comparable<Task>
 {
-    private final static TaskType defualtPriority = TaskType.OTHER;
+    private final static TaskType defaultPriority = TaskType.OTHER;
     private TaskType priority;
     private Callable task;
 
@@ -19,7 +19,7 @@ public class Task implements Callable,Comparable<Task>
 
     public static Task createTask(Callable task)
     {
-        return createTask(task, defualtPriority) ;
+        return createTask(task, defaultPriority) ;
     }
 
 
