@@ -17,9 +17,9 @@ class TaskTest {
             return 1000 ;
         };
         TaskType taskType = TaskType.COMPUTATIONAL;
-        Task<Integer> task = Task.createTask(callable1,taskType); // initial
-        Task<Integer> task0 = Task.createTask(callable1); // default
-        TaskType taskType1 = task.getPriority();//1
+        Task<Integer> task = Task.createTask(callable1,taskType);
+        Task<Integer> task0 = Task.createTask(callable1);
+        TaskType taskType1 = task.getPriority();
         TaskType taskType2 = task0.getPriority();
 
         int pr = taskType1.getPriorityValue();
@@ -37,20 +37,20 @@ class TaskTest {
             return 1000*2 ;
         };
 
-        TaskType task = TaskType.IO;//2
-        TaskType taskType = TaskType.COMPUTATIONAL;//1
+        TaskType task = TaskType.IO;
+        TaskType taskType = TaskType.COMPUTATIONAL;
 
-        Task<Integer> task0 = Task.createTask(callable1,taskType);//1
-        Task<Integer> task1 = Task.createTask(callable1,task); //2
+        Task<Integer> task0 = Task.createTask(callable1,taskType);
+        Task<Integer> task1 = Task.createTask(callable1,task);
         Task<Integer> task2 = Task.createTask(callable1);
 
-        TaskType taskType1 = task0.getPriority();//1
-        TaskType taskType2 = task1.getPriority();//2
-        TaskType taskType3 = task2.getPriority();//3
+        TaskType taskType1 = task0.getPriority();
+        TaskType taskType2 = task1.getPriority();
+        TaskType taskType3 = task2.getPriority();
 
-        int pr = taskType1.getPriorityValue();//1
-        int pr1 = taskType2.getPriorityValue();//2
-        int pr2 = taskType3.getPriorityValue();//3
+        int pr = taskType1.getPriorityValue();
+        int pr1 = taskType2.getPriorityValue();
+        int pr2 = taskType3.getPriorityValue();
 
         assertNotEquals(pr, pr1);
         assertNotEquals(pr2, pr1);
