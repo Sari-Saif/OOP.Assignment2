@@ -65,7 +65,7 @@ but we pay the overhead of creating the threadpool and operating it.
 
 ## UML
 <p align="center">
-<img src="uml.png" width="45%"/>
+<img src="UML_part_A.png" width="60%"/>
 </p>
 
 ## Languages and Tools
