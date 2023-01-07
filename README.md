@@ -63,21 +63,27 @@ We assume that this is the case because both use more or less the same number of
 
 but we pay the overhead of creating the threadpool and operating it.
 
-## UML
+### UML
 <p align="center">
 <img src="UML_part_A.png" width="60%"/>
 </p>
 
 ## PART B
-# OBJECTIVE
+### OBJECTIVE
 Here we created two new types that extend the functionality of Java's Concurrency Framework
 1. A generic task with a Type that returns a result and may throw an exception.
-   Each task has a priority used for scheduling͕ inferred from the integer value of the task͛s Type.
+   Each task has a priority used for scheduling inferred from the integer value of the tasks Type.
 2. A custom thread pool class that defines a method for submitting a generic task as described in
    the section 1 to a priority queue, and a method for submitting a generic task created by a
    Callable<V> and a Type, passed as arguments.
    See partial API for both classes in the requirements section.
  - For more details [click here](https://github.com/SariSafe/OOP.Assignment2/blob/main/Assignment%202%20Part%202%20Hebrew%20.pdf) 
+
+### UML
+<p align="center">
+<img src="UML_part_A.png" width="60%"/>
+</p>
+
 ## Languages and Tools
 
  <div align="center">
