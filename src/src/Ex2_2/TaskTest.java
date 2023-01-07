@@ -3,6 +3,8 @@ package Ex2_2;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -111,6 +113,30 @@ class TaskTest {
     }
 
     @Test
-    void call() {
+    void call()
+    {
+        Callable<Integer> callable = ()->{
+            int sum = 10;
+            int i = 10;
+            while (i>0)
+            {
+                sum+=1;
+                i-=1;
+            }
+            return sum;
+        };
+        TaskType taskType = TaskType.COMPUTATIONAL;
+        Task<Integer> task = Task.createTask(callable,taskType); // initial
+        CustomExecutor customExecutor = new CustomExecutor();
+        try
+        {
+            int call = task.call();
+            assertEquals(20,call);
+        } catch (Exception e)
+        {
+            throw new RuntimeException(e);
+        }
+
+
     }
 }
