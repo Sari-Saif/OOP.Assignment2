@@ -26,7 +26,7 @@ class Ex2_1Test
 
         for(int i = 0; i < NUM_OF_FILES_2; i++)
         {
-            filenames[i] = "text_files\\file_" + (i+1) + ".txt";
+            filenames[i] = "files_for_test\\file_" + (i+1) + ".txt";
         }
         assert 476 == Ex2_1.getNumOfLines(filenames);
 
@@ -39,7 +39,7 @@ class Ex2_1Test
 
         for(int i = 0; i < NUM_OF_FILES_2; i++)
         {
-            filenames[i] = "text_files\\file_" + (i+1) + ".txt";
+            filenames[i] = "files_for_test\\file_" + (i+1) + ".txt";
         }
 
         assert 476 == Ex2_1.getNumOfLinesThreads(filenames);
@@ -52,7 +52,7 @@ class Ex2_1Test
 
         for(int i = 0; i < NUM_OF_FILES_2; i++)
         {
-            filenames[i] = "text_files\\file_" + (i+1) + ".txt";
+            filenames[i] = "files_for_test\\file_" + (i+1) + ".txt";
         }
 
         assert 476 == Ex2_1.getNumOfLinesThreads(filenames);;
