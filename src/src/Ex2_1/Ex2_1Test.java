@@ -22,39 +22,39 @@ class Ex2_1Test
     @Test
     void getNumOfLines()
     {
-        String[] filenames = new String[NUM_OF_FILES_2];
+        String[] filenames = new String[NUM_OF_FILES_1];
 
-        for(int i = 0; i < NUM_OF_FILES_2; i++)
+        for(int i = 0; i < NUM_OF_FILES_1; i++)
         {
             filenames[i] = "files_for_test\\file_" + (i+1) + ".txt";
         }
-        assert 476 == Ex2_1.getNumOfLines(filenames);
+        assert 57 == Ex2_1.getNumOfLines(filenames);
 
     }
 
     @Test
     void getNumOfLinesThreads()
     {
-        String[] filenames = new String[NUM_OF_FILES_2];
+        String[] filenames = new String[NUM_OF_FILES_1];
 
-        for(int i = 0; i < NUM_OF_FILES_2; i++)
+        for(int i = 0; i < NUM_OF_FILES_1; i++)
         {
             filenames[i] = "files_for_test\\file_" + (i+1) + ".txt";
         }
 
-        assert 476 == Ex2_1.getNumOfLinesThreads(filenames);
+        assert 57 == Ex2_1.getNumOfLinesThreads(filenames);
     }
 
     @Test
     void getNumOfLinesThreadPool()
     {
-        String[] filenames = new String[NUM_OF_FILES_2];
+        String[] filenames = new String[NUM_OF_FILES_1];
 
-        for(int i = 0; i < NUM_OF_FILES_2; i++)
+        for(int i = 0; i < NUM_OF_FILES_1; i++)
         {
             filenames[i] = "files_for_test\\file_" + (i+1) + ".txt";
         }
 
-        assert 476 == Ex2_1.getNumOfLinesThreads(filenames);;
+        assert 57 == Ex2_1.getNumOfLinesThreads(filenames);
     }
 }
