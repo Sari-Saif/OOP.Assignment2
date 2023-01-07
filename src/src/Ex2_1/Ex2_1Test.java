@@ -16,7 +16,7 @@ class Ex2_1Test
     @Test
     void createTextFiles()
     {
-        Ex2_1.createTextFiles(NUM_OF_FILES_4, 1, BOUND_1);
+        Ex2_1.createTextFiles(NUM_OF_FILES_1, 1, BOUND_1);
     }
 
     @Test
