@@ -16,7 +16,7 @@ public class CustomExecutor
                 300,
                 TimeUnit.MILLISECONDS,
                 new PriorityBlockingQueue<>()); // LinkedBlockingQueue<>()
-        this.currentMax = 0;
+        this.currentMax = Integer.MAX_VALUE;
     }
 
 
