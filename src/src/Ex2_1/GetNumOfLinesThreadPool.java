@@ -18,6 +18,12 @@ public class GetNumOfLinesThreadPool implements Callable<Integer>
 
     }
 
+
+    /**
+     * function call override call of Callable
+     * @return the number of lines of file.
+     * @throws Exception if something go wrong in calculate.
+     */
     @Override
     public Integer call() throws Exception
     {
