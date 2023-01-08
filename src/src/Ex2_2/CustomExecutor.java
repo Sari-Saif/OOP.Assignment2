@@ -15,7 +15,7 @@ public class CustomExecutor
                 numOfCores-1,
                 300,
                 TimeUnit.MILLISECONDS,
-                new LinkedBlockingQueue<>()); // priorityBlockingQueue
+                new PriorityBlockingQueue<>()); // LinkedBlockingQueue<>()
         this.currentMax = 0;
     }
 
