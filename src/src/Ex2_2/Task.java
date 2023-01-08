@@ -39,7 +39,8 @@ public class Task<T> implements Callable<T>, Comparable<Task<T>>
     @Override
     public int compareTo(Task o)
     {
-        return Integer.compare(this.priority.getPriorityValue(), o.getPriority().getPriorityValue());
+        // prioryty is from lower number to higher number
+        return -Integer.compare(this.priority.getPriorityValue(), o.getPriority().getPriorityValue());
     }
 
 
