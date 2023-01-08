@@ -52,6 +52,13 @@ public class Ex2_1
         return textFileNames;
     }
 
+
+    /**
+     * function counting all the line of some files group
+     * @param fileNames is array of Strings with file names
+     *                  for counting number of all their lines
+     * @return the amount of lines as explain above.
+     */
     public static int getNumOfLines(String[] fileNames)
     {
         int numOfLines = 0 ;
