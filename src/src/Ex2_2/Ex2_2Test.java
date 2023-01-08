@@ -12,21 +12,25 @@ public class Ex2_2Test
     @Test
     public void partialTest(){
         CustomExecutor customExecutor = new CustomExecutor();
-        Task<Integer> task = Task.createTask(()->{
-            int sum = 0;
-            for (int i = 1; i <= 10; i++) {
-                sum += i;
+        for (int j = 0; j < 10; j++) {
+
+
+            Task<Integer> task = Task.createTask(() -> {
+                int sum = 0;
+                for (int i = 1; i <= 10; i++) {
+                    sum += i;
+                }
+                return sum;
+            }, TaskType.COMPUTATIONAL);
+            Future<Integer> sumTask = customExecutor.submit(task);
+            final int sum;
+            try {
+                sum = sumTask.get(1, TimeUnit.MILLISECONDS);
+            } catch (InterruptedException | ExecutionException | TimeoutException e) {
+                throw new RuntimeException(e);
             }
-            return sum;
-        }, TaskType.COMPUTATIONAL);
-        Future<Integer> sumTask = customExecutor.submit(task);
-        final int sum;
-        try {
-            sum = sumTask.get(1, TimeUnit.MILLISECONDS);
-        } catch (InterruptedException | ExecutionException | TimeoutException e) {
-            throw new RuntimeException(e);
+            logger.info(() -> "Sum of 1 through 10 = " + sum);
         }
-        logger.info(()-> "Sum of 1 through 10 = " + sum);
         Callable<Double> callable1 = ()-> {
             return 1000 * Math.pow(1.02, 5);
         };

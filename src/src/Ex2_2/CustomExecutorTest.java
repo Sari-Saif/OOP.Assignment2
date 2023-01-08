@@ -53,7 +53,6 @@ class CustomExecutorTest {
                 sum*=10;
                 i-=1;
             }
-            System.out.println(sum);
             return sum;
         };
 
@@ -84,10 +83,8 @@ class CustomExecutorTest {
         }
 
         assertEquals("sari",str);
-        //assertEquals();
-        //assertEquals();
-
-
+        assertEquals(1215752192,sumOftens);
+        assertEquals(20,orginalSum);
 
     }
 
