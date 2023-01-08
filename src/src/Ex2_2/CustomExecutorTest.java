@@ -3,6 +3,7 @@ package Ex2_2;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -52,15 +53,12 @@ class CustomExecutorTest {
                 sum*=10;
                 i-=1;
             }
+            System.out.println(sum);
             return sum;
         };
 
-        //TaskType taskType0 = TaskType.COMPUTATIONAL;
-        //  TaskType taskType1 = TaskType.COMPUTATIONAL;
-       // TaskType taskType2 = TaskType.COMPUTATIONAL;
-
         Task<Integer> task0 = Task.createTask(callable);
-        Task<Integer> task1= Task.createTask(callable);
+        Task<Integer> task1= Task.createTask(callable2);
         Task<String> task2 = Task.createTask(callablestr);
 
 
@@ -69,16 +67,26 @@ class CustomExecutorTest {
         Future<Integer> future1 = customExecutor.submit(task1);
         Future<String> future2  = customExecutor.submit(task2);
 
-
-
-
+        final String str;
+        final int sumOftens;
+        final int orginalSum;
         try
         {
-
-        } catch (Exception e)
+            orginalSum = future0.get();
+            sumOftens = future1.get();
+             str = future2.get();
+        } catch (InterruptedException e)
+        {
+            throw new RuntimeException(e);
+        } catch (ExecutionException e)
         {
             throw new RuntimeException(e);
         }
+
+        assertEquals("sari",str);
+        //assertEquals();
+        //assertEquals();
+
 
 
     }
