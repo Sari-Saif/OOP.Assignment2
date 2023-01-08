@@ -11,14 +11,14 @@ public class Ex2_2Test
     @Test
     public void partialTest(){
         CustomExecutor customExecutor = new CustomExecutor();
-        var task = Task.createTask(()->{
+        Task<Integer> task = Task.createTask(()->{
             int sum = 0;
             for (int i = 1; i <= 10; i++) {
                 sum += i;
             }
             return sum;
         }, TaskType.COMPUTATIONAL);
-        var sumTask = customExecutor.submit(task);
+        Future<Integer> sumTask = customExecutor.submit(task);
         final int sum;
         try {
             sum = sumTask.get(1, TimeUnit.MILLISECONDS);
@@ -33,10 +33,10 @@ public class Ex2_2Test
             StringBuilder sb = new StringBuilder("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
             return sb.reverse().toString();
         };
-        var priceTask = customExecutor.submit(()-> {
+        Future<Double> priceTask = customExecutor.submit(()-> {
             return 1000 * Math.pow(1.02, 5);
         }, TaskType.COMPUTATIONAL);
-        var reverseTask = customExecutor.submit(callable2, TaskType.IO);
+        Future<String> reverseTask = customExecutor.submit(callable2, TaskType.IO);
         final Double totalPrice;
         final String reversed;
         try {
