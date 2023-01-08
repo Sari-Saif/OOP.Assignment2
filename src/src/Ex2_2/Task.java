@@ -5,12 +5,16 @@ import java.util.concurrent.Callable;
 
 public class Task<T> implements Callable<T>, Comparable<Task<T>>
 {
-
     private final static TaskType defaultPriority = TaskType.OTHER;
     private TaskType priority;
     private Callable<T> task;
 
 
+    /**
+     * function constructor
+     * @param task type Callable
+     * @param priority to set for the new task
+     */
     private Task(Callable<T> task, TaskType priority)
     {
         this.task = task;
