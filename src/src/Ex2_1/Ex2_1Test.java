@@ -55,6 +55,6 @@ class Ex2_1Test
             filenames[i] = "files_for_test\\file_" + (i+1) + ".txt";
         }
 
-        assert 57 == Ex2_1.getNumOfLinesThreads(filenames);
+        assert 57 == Ex2_1.getNumOfLinesThreadPool(filenames);
     }
 }
