@@ -15,6 +15,11 @@ public class GetNumOfLinesThread extends Thread
     {
         this.filename = fileName;
     }
+
+    /**
+     * function getter
+     * @return the number of lines class member.
+     */
     public int get_numOfLines()
     {
         return this.numberOfLines;
