@@ -13,7 +13,8 @@ public class CustomExecutor
                 numOfCores-1,
                 300,
                 TimeUnit.MILLISECONDS,
-                new PriorityBlockingQueue<>());
+                new LinkedBlockingQueue<>());
+
     }
 
 

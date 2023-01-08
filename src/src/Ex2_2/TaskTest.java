@@ -128,15 +128,14 @@ class TaskTest {
         TaskType taskType = TaskType.COMPUTATIONAL;
         Task<Integer> task = Task.createTask(callable,taskType); // initial
         CustomExecutor customExecutor = new CustomExecutor();
+        int call;
         try
         {
-            int call = task.call();
-            assertEquals(20,call);
+            call = task.call();
         } catch (Exception e)
         {
             throw new RuntimeException(e);
         }
-
-
+        assertEquals(20,call);
     }
 }

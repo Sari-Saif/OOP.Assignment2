@@ -12,17 +12,6 @@ import java.util.concurrent.Future;
 
 public class Main {
     public static void main(String[] args) {
-
-
-    int i = 10;
-    int sum = 10;
-    while (i>0)
-    {
-            sum*=10;
-            i-=1;
-    }
-        System.out.println(sum);}
-
 //        Task task = Task.createTask(()->
 //        {
 //            return "heyyyyyyyyyyyyyyyy";
@@ -59,4 +48,5 @@ public class Main {
 //        System.out.println(tt1.getPriorityValue());
 //        System.out.println(tt1);
 //        System.out.println(tt1.getType());
-    }
+ }
+}
