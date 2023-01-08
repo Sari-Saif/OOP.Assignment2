@@ -82,6 +82,12 @@ public class Ex2_1
         return numOfLines;
     }
 
+    /**
+     * function counting all the line of some files group, with Threads.
+     * @param fileNames is array of Strings with file names
+     *                  for counting number of all their lines
+     * @return the amount of lines as explain above.
+     */
     public int getNumOfLinesThreads(String[] fileNames)
     {
         int counterNumOfLines = 0;
