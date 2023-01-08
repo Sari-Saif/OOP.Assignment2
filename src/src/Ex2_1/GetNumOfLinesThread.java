@@ -2,15 +2,22 @@ package Ex2_1;
 
 public class GetNumOfLinesThread extends Thread
 {
-    int numberOflines;
-    String filename;
-    public GetNumOfLinesThread(String fileName)
+    private int numberOfLines;
+    private String filename;
+
+
+    /**
+     * The constructor.
+     * @param fileName is name of existing file for counting the
+     *                 number of lines inside it.
+     */
+    GetNumOfLinesThread(String fileName)
     {
         this.filename = fileName;
     }
     public int get_numOfLines()
     {
-        return this.numberOflines;
+        return this.numberOfLines;
     }
 
     @Override
@@ -18,6 +25,6 @@ public class GetNumOfLinesThread extends Thread
     {
         String[] arrWithOneFilename = new String[1];
         arrWithOneFilename[0] = this.filename;
-        numberOflines = Ex2_1.getNumOfLines(arrWithOneFilename);
+        numberOfLines = Ex2_1.getNumOfLines(arrWithOneFilename);
     }
 }
