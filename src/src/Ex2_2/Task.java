@@ -5,6 +5,7 @@ import java.util.concurrent.Callable;
 
 public class Task<T> implements Callable<T>, Comparable<Task<T>>
 {
+
     private final static TaskType defaultPriority = TaskType.OTHER;
     private TaskType priority;
     private Callable<T> task;
@@ -47,4 +48,26 @@ public class Task<T> implements Callable<T>, Comparable<Task<T>>
     {
         return this.task.call();
     }
+    @Override
+    public String toString() {
+        return "Task{" +
+                "priority=" + priority +
+                ", task=" + task +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Task<?> task1)) return false;
+        return getPriority() == task1.getPriority() && task.equals(task1.task);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getPriority(), task);
+    }
+
+
+
 }

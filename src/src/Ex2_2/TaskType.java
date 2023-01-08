@@ -61,4 +61,11 @@ public enum TaskType
 
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "TaskType{" +
+                "typePriority=" + typePriority +
+                '}';
+    }
 }

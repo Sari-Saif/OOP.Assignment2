@@ -107,7 +107,6 @@ class TaskTest {
 
         int compare = taskType.compareTo(taskType1);
         int compare1 = taskType1.compareTo(taskType2);
-        //Task<Integer> task = Task.createTask(callable2,taskType);
         assertNotEquals(0,compare);
         assertEquals(0,compare1);
     }

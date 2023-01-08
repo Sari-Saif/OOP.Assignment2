@@ -1,5 +1,6 @@
 package Ex2_2;
 
+import java.util.Objects;
 import java.util.concurrent.*;
 
 public class CustomExecutor
@@ -42,5 +43,24 @@ public class CustomExecutor
     public void gracefullyTerminate()
     {
         this.threadPool.shutdown();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof CustomExecutor that)) return false;
+        return threadPool.equals(that.threadPool);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(threadPool);
+    }
+
+    @Override
+    public String toString() {
+        return "CustomExecutor{" +
+                "threadPool=" + threadPool +
+                '}';
     }
 }

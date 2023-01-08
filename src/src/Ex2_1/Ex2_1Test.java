@@ -1,6 +1,7 @@
 package Ex2_1;
 
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 class Ex2_1Test
 {
@@ -23,12 +24,12 @@ class Ex2_1Test
     void getNumOfLines()
     {
         String[] filenames = new String[NUM_OF_FILES_1];
-
+        Ex2_1 threadsUsing = new Ex2_1();
         for(int i = 0; i < NUM_OF_FILES_1; i++)
         {
             filenames[i] = "files_for_test\\file_" + (i+1) + ".txt";
         }
-        assert 57 == Ex2_1.getNumOfLines(filenames);
+       assertEquals (57,threadsUsing.getNumOfLinesThreads(filenames));
 
     }
 
@@ -42,8 +43,7 @@ class Ex2_1Test
         {
             filenames[i] = "files_for_test\\file_" + (i+1) + ".txt";
         }
-
-        assert 57 == threadsUsing.getNumOfLinesThreads(filenames);
+        assertEquals(57,threadsUsing.getNumOfLinesThreads(filenames));
     }
 
     @Test
@@ -57,6 +57,7 @@ class Ex2_1Test
             filenames[i] = "files_for_test\\file_" + (i+1) + ".txt";
         }
 
-        assert 57 == threadPoolUsing.getNumOfLinesThreadPool(filenames);
+        assertEquals(57,threadPoolUsing.getNumOfLinesThreadPool(filenames));
+
     }
 }
