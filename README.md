@@ -81,7 +81,7 @@ Here we created two new types that extend the functionality of Java's Concurrenc
 
 ### UML
 <p align="center">
-<img src="UML_part_A.png" width="60%"/>
+<img src="UML_part_B.png" width="60%"/>
 </p>
 
 ## Languages and Tools
