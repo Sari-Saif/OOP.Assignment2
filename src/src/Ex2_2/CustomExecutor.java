@@ -14,7 +14,6 @@ public class CustomExecutor
                 300,
                 TimeUnit.MILLISECONDS,
                 new LinkedBlockingQueue<>()); // priorityBlockingQueue
-
     }
 
 
