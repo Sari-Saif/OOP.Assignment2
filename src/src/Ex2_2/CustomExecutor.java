@@ -6,6 +6,7 @@ import java.util.concurrent.*;
 public class CustomExecutor
 {
     private ThreadPoolExecutor threadPool;
+    private int currentMax;
 
     CustomExecutor()
     {
@@ -15,11 +16,16 @@ public class CustomExecutor
                 300,
                 TimeUnit.MILLISECONDS,
                 new LinkedBlockingQueue<>()); // priorityBlockingQueue
+        this.currentMax = 0;
     }
 
 
     public <T> Future<T> submit(Task<T> task)
     {
+        if(task.getPriority().getPriorityValue() < this.currentMax)
+        {
+            this.currentMax = task.getPriority().getPriorityValue();
+        }
         return this.threadPool.submit(task);
     }
 
@@ -36,11 +42,11 @@ public class CustomExecutor
     }
 
 
-    // TODO: public int getCurrentMax()
-//    public int getCurrentMax()
-//    {
-//
-//    }
+    // TODO: public int getCurrentMax() better!
+    public int getCurrentMax()
+    {
+        return this.currentMax;
+    }
 
 
     public void gracefullyTerminate()
