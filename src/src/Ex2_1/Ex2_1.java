@@ -68,7 +68,7 @@ public class Ex2_1
         return numOfLines;
     }
 
-    public static int getNumOfLinesThreads(String[] fileNames)
+    public int getNumOfLinesThreads(String[] fileNames)
     {
         int counterNumOfLines = 0;
 
@@ -92,7 +92,7 @@ public class Ex2_1
         return counterNumOfLines;
     }
 
-    public static int getNumOfLinesThreadPool(String[] fileNames)
+    public int getNumOfLinesThreadPool(String[] fileNames)
     {
         int numOfLines = 0;
 
