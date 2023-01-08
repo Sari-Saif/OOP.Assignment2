@@ -35,7 +35,7 @@ public class CustomExecutor
     }
 
 
-    // TODO: public static TaskType getCurrentMax()
+    // TODO: public TaskType getCurrentMax()
 
 
     public void gracefullyTerminate()
