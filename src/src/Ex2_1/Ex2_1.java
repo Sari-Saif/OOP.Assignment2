@@ -11,6 +11,13 @@ import java.util.concurrent.Future;
 
 public class Ex2_1
 {
+    /**
+     * function for making files.
+     * @param n is the number of files to create
+     * @param seed for random number of lines in each file.
+     * @param bound same reason like above
+     * @return a Strings array with the file names was created
+     */
     public static String[] createTextFiles(int n, int seed, int bound)
     {
         String[] textFileNames = new String[n];
