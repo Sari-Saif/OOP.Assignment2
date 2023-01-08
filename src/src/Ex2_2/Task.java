@@ -34,6 +34,13 @@ public class Task<T> implements Callable<T>, Comparable<Task<T>>
     }
 
 
+    /**
+     * A factory method for creating a Task
+     * @param task type Callable
+     * @param priority for assign to the new Task
+     * @return the created Task
+     * @param <T> type return from Callable call function.
+     */
     public static <T> Task<T> createTask(Callable<T> task, TaskType priority)
     {
         return new Task<T>(task, priority);
