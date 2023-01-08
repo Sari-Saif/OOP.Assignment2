@@ -35,7 +35,7 @@ class Ex2_1Test
     @Test
     void getNumOfLinesThreads()
     {
-        Ex2_1 threadPoolUsing = new Ex2_1();
+        Ex2_1 threadsUsing = new Ex2_1();
         String[] filenames = new String[NUM_OF_FILES_1];
 
         for(int i = 0; i < NUM_OF_FILES_1; i++)
@@ -43,7 +43,7 @@ class Ex2_1Test
             filenames[i] = "files_for_test\\file_" + (i+1) + ".txt";
         }
 
-        assert 57 == threadPoolUsing.getNumOfLinesThreads(filenames);
+        assert 57 == threadsUsing.getNumOfLinesThreads(filenames);
     }
 
     @Test
