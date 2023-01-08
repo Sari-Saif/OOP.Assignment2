@@ -6,6 +6,12 @@ public class GetNumOfLinesThreadPool implements Callable<Integer>
 {
      private String filename;
 
+
+    /**
+     * The constructor.
+     * @param filename is name of existing file for counting the
+     *                 number of lines inside it.
+     */
     public GetNumOfLinesThreadPool(String filename)
     {
         this.filename = filename;
