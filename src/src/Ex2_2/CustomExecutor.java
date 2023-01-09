@@ -72,6 +72,11 @@ public class CustomExecutor
 
 
     // TODO: public int getCurrentMax() better!
+    /**
+     * function getter
+     * @return the current max
+     * (lower value is higher priority)
+     */
     public int getCurrentMax()
     {
         return this.currentMax;
