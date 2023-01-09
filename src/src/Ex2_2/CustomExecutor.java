@@ -129,6 +129,9 @@ public class CustomExecutor
                 '}';
     }
 
+    /**
+    * Returns true if this executor has been shut down
+    * */
     public boolean getisShutDown()
     {
         return threadPool.isShutdown();
