@@ -18,8 +18,8 @@ public class CustomExecutor
     {
         this.currentMax = new AtomicInteger(2000);
         int numOfCores = Runtime.getRuntime().availableProcessors();
-        this.threadPool = new ThreadPoolExecutor(2,//numOfCores/2,
-                2,//numOfCores-1,
+        this.threadPool = new ThreadPoolExecutor(numOfCores/2,
+                numOfCores-1,
                 300,
                 TimeUnit.MILLISECONDS,
                 new ourPriorityBlockingQueue(this.currentMax));//new PriorityBlockingQueue<>()); // LinkedBlockingQueue<>()
