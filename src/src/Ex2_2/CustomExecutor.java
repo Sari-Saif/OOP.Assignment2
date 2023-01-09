@@ -105,8 +105,14 @@ public class CustomExecutor
         return threadPool.equals(that.threadPool);
     }
 
+
+    /**
+     * function create Hash value for CustomExecutor object.
+     * @return the integer Hash value.
+     */
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
         return Objects.hash(threadPool);
     }
 
