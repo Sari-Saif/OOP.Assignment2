@@ -85,6 +85,12 @@ public class Task<T> implements Callable<T>, Comparable<Task<T>>
     {
         return this.task.call();
     }
+
+
+    /**
+     * override toString of this object
+     * @return String represent the Task object.
+     */
     @Override
     public String toString() {
         return "Task{" +
