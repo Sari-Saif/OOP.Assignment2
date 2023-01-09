@@ -116,8 +116,14 @@ public class CustomExecutor
         return Objects.hash(threadPool);
     }
 
+
+    /**
+     * override toString of this object
+     * @return String represent the CustomExecutor object.
+     */
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "CustomExecutor{" +
                 "threadPool=" + threadPool +
                 '}';
