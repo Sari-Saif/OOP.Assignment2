@@ -26,12 +26,22 @@ public class CustomExecutor
     }
 
 
+    /**
+     * function submit new Task to the tasks queue
+     * @param task type Task
+     * @return the correct Future type according to Task
+     * @param <T> the return value from call function of Task.
+     */
     public <T> Future<T> submit(Task<T> task)
     {
+        // check if priority of current Task to submit can replace
+        // the current max value. (max - important. so lowers value are good).
         if(task.getPriority().getPriorityValue() < this.currentMax)
         {
             this.currentMax = task.getPriority().getPriorityValue();
         }
+
+        // submit the Task to the 'real' submit of threadPool.
         return this.threadPool.submit(task);
     }
 
