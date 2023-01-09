@@ -225,7 +225,7 @@ class CustomExecutorTest {
         {
             throw new RuntimeException(e);
         }
-        isShutDown = customExecutor.getisShutDown();
+        isShutDown = customExecutor.isShutDown();
         assertEquals(1924,ascii);
         assertEquals(41.631789999999995,km);
         assertTrue(isShutDown);
