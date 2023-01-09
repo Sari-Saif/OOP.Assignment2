@@ -46,6 +46,13 @@ public class CustomExecutor
     }
 
 
+    /**
+     * function submit new Task to the tasks queue
+     * @param c type Callable for making new Task object
+     * @param tt type TaskType for making new Task object
+     * @return the correct Future type according to Task
+     * @param <T> the return value from call function of Task.
+     */
     public <T> Future<T> submit(Callable<T> c, TaskType tt)
     {
         return submit(Task.createTask(c, tt));
