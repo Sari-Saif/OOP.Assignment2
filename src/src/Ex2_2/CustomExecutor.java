@@ -8,6 +8,12 @@ public class CustomExecutor
     private ThreadPoolExecutor threadPool;
     private int currentMax;
 
+
+    /**
+     * function C'TOR.
+     * init the threadPool as explain us in lecture 9,
+     * with the correct values was needed for this assignment.
+     */
     CustomExecutor()
     {
         int numOfCores = Runtime.getRuntime().availableProcessors();
