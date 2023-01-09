@@ -92,15 +92,23 @@ public class Task<T> implements Callable<T>, Comparable<Task<T>>
      * @return String represent the Task object.
      */
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "Task{" +
                 "priority=" + priority +
                 ", task=" + task +
                 '}';
     }
 
+
+    /**
+     * function give users option to exam if two Task are the same.
+     * @param o is the other object to exam.
+     * @return True for equal, False for not.
+     */
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object o)
+    {
         if (this == o) return true;
         if (!(o instanceof Task<?> task1)) return false;
         return getPriority() == task1.getPriority() && task.equals(task1.task);
