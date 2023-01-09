@@ -1,5 +1,10 @@
 package Ex2_2;
 
+
+/**
+ * This enum taken exactly as it was in the
+ * instructions pdf for this assignment.
+ */
 public enum TaskType
 {
     COMPUTATIONAL(1) {
@@ -57,15 +62,6 @@ public enum TaskType
      */
     private static boolean validatePriority(int priority)
     {
-        if (priority < 1 || priority >10) return false;
-
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "TaskType{" +
-                "typePriority=" + typePriority +
-                '}';
+        return priority >= 1 && priority <= 10;
     }
 }
