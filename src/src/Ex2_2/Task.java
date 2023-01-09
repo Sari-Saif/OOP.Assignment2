@@ -61,7 +61,7 @@ public class Task<T> implements Callable<T>, Comparable<Task<T>>
      * function for comparable functionality.
      * @param o the object to be compared.
      * @return 1 if other priority number bigger than THIS,
-     * because the smallest nubers needs to be first in the
+     * because the smallest numbers needs to be first in the
      * priority queue. so result from this function is 'by reverse'.
      * @return 0 if priority of THIS Task and other are equals.
      * @return -1 if THIS priority number bigger than other,
@@ -75,6 +75,11 @@ public class Task<T> implements Callable<T>, Comparable<Task<T>>
     }
 
 
+    /**
+     * function call override call of Callable
+     * @return the number of lines of file.
+     * @throws Exception if something go wrong in calculate.
+     */
     @Override
     public T call() throws Exception
     {
