@@ -91,8 +91,15 @@ public class CustomExecutor
         this.threadPool.shutdown();
     }
 
+
+    /**
+     * function give users option to exam if two CustomExecutors are the same.
+     * @param o is the other object to exam.
+     * @return True for equal, False for not.
+     */
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object o)
+    {
         if (this == o) return true;
         if (!(o instanceof CustomExecutor that)) return false;
         return threadPool.equals(that.threadPool);
