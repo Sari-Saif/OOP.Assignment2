@@ -114,11 +114,14 @@ public class Task<T> implements Callable<T>, Comparable<Task<T>>
         return getPriority() == task1.getPriority() && task.equals(task1.task);
     }
 
+
+    /**
+     * function create Hash value for Task object.
+     * @return the integer Hash value.
+     */
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
         return Objects.hash(getPriority(), task);
     }
-
-
-
 }
