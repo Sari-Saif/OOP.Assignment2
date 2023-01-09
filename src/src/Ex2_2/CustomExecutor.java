@@ -2,11 +2,12 @@ package Ex2_2;
 
 import java.util.Objects;
 import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class CustomExecutor
 {
     private ThreadPoolExecutor threadPool;
-    private int currentMax;
+    private AtomicInteger currentMax;
 
     /**
      * function C'TOR.
@@ -15,14 +16,14 @@ public class CustomExecutor
      */
     CustomExecutor()
     {
-
+        this.currentMax = new AtomicInteger(2000);
         int numOfCores = Runtime.getRuntime().availableProcessors();
-        this.threadPool = new ThreadPoolExecutor(numOfCores/2,
-                numOfCores-1,
+        this.threadPool = new ThreadPoolExecutor(2,//numOfCores/2,
+                2,//numOfCores-1,
                 300,
                 TimeUnit.MILLISECONDS,
-                new PriorityBlockingQueue<>()); // LinkedBlockingQueue<>()
-        this.currentMax = Integer.MAX_VALUE;
+                new ourPriorityBlockingQueue(this.currentMax));//new PriorityBlockingQueue<>()); // LinkedBlockingQueue<>()
+        //this.currentMax = Integer.MAX_VALUE;
     }
 
 
@@ -36,10 +37,10 @@ public class CustomExecutor
     {
         // check if priority of current Task to submit can replace
         // the current max value. (max - important. so lowers value are good).
-        if(task.getPriority().getPriorityValue() < this.currentMax)
-        {
-            this.currentMax = task.getPriority().getPriorityValue();
-        }
+//        if(task.getPriority().getPriorityValue() < this.currentMax)
+//        {
+//            this.currentMax = task.getPriority().getPriorityValue();
+//        }
 
         // submit the Task to the 'real' submit of threadPool.
         return this.threadPool.submit(task);
@@ -77,7 +78,7 @@ public class CustomExecutor
      * @return the current max
      * (lower value is higher priority)
      */
-    public int getCurrentMax()
+    public AtomicInteger getCurrentMax()
     {
         return this.currentMax;
     }
