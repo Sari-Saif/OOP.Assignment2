@@ -47,6 +47,10 @@ public class Task<T> implements Callable<T>, Comparable<Task<T>>
     }
 
 
+    /**
+     * function getter
+     * @return the priority of THIS Task
+     */
     public TaskType getPriority()
     {
         return this.priority;
