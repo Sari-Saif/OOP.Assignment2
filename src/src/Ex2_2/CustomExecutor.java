@@ -8,7 +8,6 @@ public class CustomExecutor
     private ThreadPoolExecutor threadPool;
     private int currentMax;
 
-
     /**
      * function C'TOR.
      * init the threadPool as explain us in lecture 9,
@@ -16,6 +15,7 @@ public class CustomExecutor
      */
     CustomExecutor()
     {
+
         int numOfCores = Runtime.getRuntime().availableProcessors();
         this.threadPool = new ThreadPoolExecutor(numOfCores/2,
                 numOfCores-1,
@@ -127,5 +127,10 @@ public class CustomExecutor
         return "CustomExecutor{" +
                 "threadPool=" + threadPool +
                 '}';
+    }
+
+    public boolean getisShutDown()
+    {
+        return threadPool.isShutdown();
     }
 }

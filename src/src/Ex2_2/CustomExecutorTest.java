@@ -56,6 +56,7 @@ class CustomExecutorTest {
             return sum;
         };
 
+
         Task<Integer> task0 = Task.createTask(callable);
         Task<Integer> task1= Task.createTask(callable2);
         Task<String> task2 = Task.createTask(callablestr);
@@ -90,14 +91,147 @@ class CustomExecutorTest {
 
 
     @Test
-    void testSubmit() {
+    void testSubmit()
+    {
+        Callable<Integer> callable = ()->{
+            int sum = 10;
+            int i = 10;
+            while (i>0)
+            {
+                sum+=1;
+                i-=1;
+            }
+            return sum;
+        };
+        Callable<String> callablestr = ()->{
+            String str = "";
+            for (int i = 1;i<10;i++){
+                str +='a';
+            }
+            return str;
+        };
+        final String str;
+        final int sum;
+
+        TaskType taskoth = TaskType.OTHER;
+        TaskType taskcomp = TaskType.COMPUTATIONAL;
+
+        CustomExecutor customExecutor = new CustomExecutor();
+        Future<String> futurestr = customExecutor.submit(callablestr, taskoth);
+        Future<Integer> future = customExecutor.submit(callable, taskcomp);
+
+        try
+        {
+            str = futurestr.get();
+            sum = future.get();
+        } catch (InterruptedException e)
+        {
+            throw new RuntimeException(e);
+        } catch (ExecutionException e)
+        {
+            throw new RuntimeException(e);
+        }
+
+
+        assertEquals("aaaaaaaaa",str);
+        assertEquals(20,sum);
+
+
     }
 
     @Test
-    void testSubmit1() {
+    void testSubmit1()
+    {
+        Callable<Integer> callable = ()->{
+            int sum = 10;
+            int i = 10;
+            while (i>0)
+            {
+                sum+=1;
+                i-=1;
+            }
+            return sum;
+        };
+        Callable<String> callablestr = ()->{
+            String str = "";
+            for (int i = 1;i<10;i++){
+                str +='a';
+            }
+            return str;
+        };
+        final String str;
+        final int sum;
+
+        CustomExecutor customExecutor = new CustomExecutor();
+        Future<String> futurestr = customExecutor.submit(callablestr);
+        Future<Integer> future = customExecutor.submit(callable);
+
+        try
+        {
+            str = futurestr.get();
+            sum = future.get();
+        } catch (InterruptedException e)
+        {
+            throw new RuntimeException(e);
+        } catch (ExecutionException e)
+        {
+            throw new RuntimeException(e);
+        }
+
+
+        assertEquals("aaaaaaaaa",str);
+        assertEquals(20,sum);
+
     }
 
     @Test
-    void gracefullyTerminate() {
+    void gracefullyTerminate()
+    {
+
+
+        Callable<Double> callable =()->{
+            double kilm = 67;
+             return kilm*0.62137;
+        };
+        Callable<Integer> callable1 = ()->{
+            String projectname = "Customer Threadpool";
+            int sumOfAsciiValues =0 ;
+            for (int i =0;i<projectname.length();i++)
+            {
+                char c = projectname.charAt(i);
+                int asciivalue = (int)c;
+                sumOfAsciiValues+=asciivalue;
+            }
+            return sumOfAsciiValues;
+        };
+        final int ascii;
+        final double km ;
+        boolean isShutDown;
+
+
+        CustomExecutor customExecutor = new CustomExecutor();
+        Future<Double> futureKm = customExecutor.submit(callable);
+        Future<Integer> futureAscii = customExecutor.submit(callable1);
+        customExecutor.gracefullyTerminate();
+
+        try
+        {
+            km = futureKm.get();
+            ascii = futureAscii.get();
+        } catch (InterruptedException e)
+        {
+            throw new RuntimeException(e);
+        } catch (ExecutionException e)
+        {
+            throw new RuntimeException(e);
+        }
+        isShutDown = customExecutor.getisShutDown();
+        assertEquals(1924,ascii);
+        assertEquals(41.631789999999995,km);
+        assertTrue(isShutDown);
+
+
     }
+
+
 }
