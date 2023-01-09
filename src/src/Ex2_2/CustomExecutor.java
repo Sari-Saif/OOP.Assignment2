@@ -16,14 +16,13 @@ public class CustomExecutor
      */
     CustomExecutor()
     {
-        this.currentMax = new AtomicInteger(2000);
+        this.currentMax = new AtomicInteger(Integer.MAX_VALUE);
         int numOfCores = Runtime.getRuntime().availableProcessors();
         this.threadPool = new ThreadPoolExecutor(numOfCores/2,
                 numOfCores-1,
                 300,
                 TimeUnit.MILLISECONDS,
-                new ourPriorityBlockingQueue(this.currentMax));//new PriorityBlockingQueue<>()); // LinkedBlockingQueue<>()
-        //this.currentMax = Integer.MAX_VALUE;
+                new ourPriorityBlockingQueue(this.currentMax));
     }
 
 
@@ -35,14 +34,7 @@ public class CustomExecutor
      */
     public <T> Future<T> submit(Task<T> task)
     {
-        // check if priority of current Task to submit can replace
-        // the current max value. (max - important. so lowers value are good).
-//        if(task.getPriority().getPriorityValue() < this.currentMax)
-//        {
-//            this.currentMax = task.getPriority().getPriorityValue();
-//        }
-
-        // submit the Task to the 'real' submit of threadPool.
+        // TODO: maybe implement here something with currentMax?
         return this.threadPool.submit(task);
     }
 
@@ -72,7 +64,6 @@ public class CustomExecutor
     }
 
 
-    // TODO: public int getCurrentMax() better!
     /**
      * function getter
      * @return the current max
@@ -129,6 +120,7 @@ public class CustomExecutor
                 "threadPool=" + threadPool +
                 '}';
     }
+
 
     /**
     * Returns true if this executor has been shut down
