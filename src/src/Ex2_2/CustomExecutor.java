@@ -83,6 +83,9 @@ public class CustomExecutor
     }
 
 
+    /**
+     * function make shutdown to threadPool member.
+     */
     public void gracefullyTerminate()
     {
         this.threadPool.shutdown();
