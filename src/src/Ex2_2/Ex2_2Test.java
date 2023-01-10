@@ -8,6 +8,10 @@ import java.util.concurrent.*;
 public class Ex2_2Test
 {
     public static final Logger logger = LoggerFactory.getLogger(Ex2_2Test.class);
+
+    /*
+        partial test - for specific methods
+     */
     @Test
     public void partialTest(){
         CustomExecutor customExecutor = new CustomExecutor();

@@ -10,6 +10,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CustomExecutorTest {
 
+   /*
+     test the submit method that need to provide it Task object
+     by create number of tasks and callable's, we checked if
+     the operation return a correct result that stored in future
+     that mean the function work as we like(want).
+    */
     @Test
     void submit()
     {
@@ -88,7 +94,12 @@ class CustomExecutorTest {
         assertEquals(20,orginalSum);
 
     }
-
+ /*
+     test submit method that need to provide it TaskType object and callable
+     by create number of TaskTypes and callable's, we checked if
+     the operation return a correct result that stored in future
+     that mean the function work as we like(want).
+    */
 
     @Test
     void testSubmit()
@@ -138,7 +149,12 @@ class CustomExecutorTest {
 
 
     }
-
+    /*
+    test submit method that need to provide it  callable object
+    by create number of callable's, we checked if
+    the operation return a correct result that stored in future
+    that mean the function work as we like(want).
+    */
     @Test
     void testSubmit1()
     {
@@ -183,7 +199,10 @@ class CustomExecutorTest {
         assertEquals(20,sum);
 
     }
-
+    /*
+        test the operation gracefullyTermination by use method shutdown and check if the
+        CustomThreadPool it's shutdown and isn't accept more tasks ...
+     */
     @Test
     void gracefullyTerminate()
     {
@@ -225,6 +244,7 @@ class CustomExecutorTest {
         {
             throw new RuntimeException(e);
         }
+
         isShutDown = customExecutor.isShutDown();
         assertEquals(1924,ascii);
         assertEquals(41.631789999999995,km);
