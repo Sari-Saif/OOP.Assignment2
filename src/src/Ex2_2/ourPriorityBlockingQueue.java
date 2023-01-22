@@ -32,12 +32,15 @@ public class ourPriorityBlockingQueue extends PriorityBlockingQueue //LinkedBloc
     {
         //TODO: fix this functionality..
         System.out.println("take()");
-        this.currMax.set(12345); // proof that update is working!!!!
+        //this.currMax.set(12345); // proof that update is working!!!!
 
-//        if(super.size() > 1)
-//        {
-//            this.currMax.set(((Task<?>) super.stream().toList().get(this.size() - 2)).getPriority().getPriorityValue());
-//        }
+        if(super.size() > 1)
+        {
+            this.currMax.set(((Task<?>) super.stream().toList().get(this.size() - 2)).getPriority().getPriorityValue());
+        }
+        else{
+            this.currMax.set(Integer.MAX_VALUE);// for empty queue
+        }
 
         return super.take();
     }
