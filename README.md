@@ -76,7 +76,7 @@ Here we created two new types that extend the functionality of Java's Concurrenc
 2. A custom thread pool class that defines a method for submitting a generic task as described in
    the section 1 to a priority queue, and a method for submitting a generic task created by a
    Callable<V> and a Type, passed as arguments.
-   See partial API for both classes in the requirements section.
+   
  - For more details [click here](https://github.com/SariSafe/OOP.Assignment2/blob/main/Assignment%202%20Part%202%20Hebrew%20.pdf) 
 
 ### UML
